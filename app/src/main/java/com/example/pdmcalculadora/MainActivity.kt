@@ -17,12 +17,15 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
-            Calculadora()
-
+            MaterialTheme {
+                Surface {
+                    Calculadora()
+                }
+            }
         }
     }
 }
+
 
 @Composable
 fun CreateButton(text: String, onClick: () -> Unit) {

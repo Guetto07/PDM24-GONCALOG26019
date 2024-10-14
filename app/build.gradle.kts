@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.pdmcalculadora"
+    namespace = "com.example.calculadora"
     compileSdk = 34
 
     defaultConfig {
