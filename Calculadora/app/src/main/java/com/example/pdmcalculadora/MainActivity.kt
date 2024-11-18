@@ -3,13 +3,17 @@ package com.example.calculadora
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp // Importante para o TextUnit
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 
@@ -37,18 +41,14 @@ fun CreateButton(text: String, onClick: () -> Unit) {
 fun Calculadora() {
     var display by remember { mutableStateOf("0") }
     var lastOperator by remember { mutableStateOf("") }
-    var operand by remember { mutableStateOf("") }
+    var operand by remember { mutableStateOf("0") }
     var resetDisplayOnNextInput by remember { mutableStateOf(false) }
 
-    // Lógica de clique dos botões
     fun onButtonClick(value: String) {
         when (value) {
-            
             in listOf("+", "-", "x", "/") -> {
-                if (lastOperator.isEmpty()) {
-                    operand = display
-                } else if (!resetDisplayOnNextInput) {
-                    // Executar a operação anterior
+                // Se houver um operador anterior, realiza a operação
+                if (lastOperator.isNotEmpty()) {
                     operand = when (lastOperator) {
                         "+" -> (operand.toDouble() + display.toDouble()).toString()
                         "-" -> (operand.toDouble() - display.toDouble()).toString()
@@ -56,6 +56,8 @@ fun Calculadora() {
                         "/" -> (operand.toDouble() / display.toDouble()).toString()
                         else -> display
                     }
+                } else {
+                    operand = display
                 }
                 lastOperator = value
                 resetDisplayOnNextInput = true
@@ -66,7 +68,10 @@ fun Calculadora() {
                         "+" -> (operand.toDouble() + display.toDouble()).toString()
                         "-" -> (operand.toDouble() - display.toDouble()).toString()
                         "x" -> (operand.toDouble() * display.toDouble()).toString()
-                        "/" -> (operand.toDouble() / display.toDouble()).toString()
+                        "/" -> {
+                            if (display != "0") (operand.toDouble() / display.toDouble()).toString()
+                            else "Erro"  // Divisão por zero
+                        }
                         else -> display
                     }
                     lastOperator = ""
@@ -80,6 +85,14 @@ fun Calculadora() {
                 lastOperator = ""
                 resetDisplayOnNextInput = false
             }
+            else -> {
+                if (resetDisplayOnNextInput) {
+                    display = value
+                    resetDisplayOnNextInput = false
+                } else {
+                    display = if (display == "0") value else display + value
+                }
+            }
         }
     }
 
@@ -89,7 +102,13 @@ fun Calculadora() {
         // Display
         Text(
             text = display,
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth()
+                .background(Color.Black) // Fundo preto
+                .padding(16.dp), // Padding para o texto
+            color = Color.White, // Cor do texto branca
+            style = TextStyle(fontSize = 32.sp) // Tamanho do texto em sp
         )
 
         // Botões
@@ -98,6 +117,7 @@ fun Calculadora() {
             CreateButton(text = "8", onClick = { onButtonClick("8") })
             CreateButton(text = "9", onClick = { onButtonClick("9") })
             CreateButton(text = "/", onClick = { onButtonClick("/") })
+            CreateButton(text = "C", onClick = { onButtonClick("C") })
         }
         Row {
             CreateButton(text = "4", onClick = { onButtonClick("4") })
@@ -112,7 +132,6 @@ fun Calculadora() {
             CreateButton(text = "-", onClick = { onButtonClick("-") })
         }
         Row {
-            CreateButton(text = "C", onClick = { onButtonClick("C") })
             CreateButton(text = "0", onClick = { onButtonClick("0") })
             CreateButton(text = ".", onClick = { onButtonClick(".") })
             CreateButton(text = "=", onClick = { onButtonClick("=") })
