@@ -3,7 +3,6 @@ package com.example.appnoticias
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -16,32 +15,39 @@ import com.example.appnoticias.ui.theme.APPNoticiasTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             APPNoticiasTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                AppNoticiasScaffold()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun AppNoticiasScaffold() {
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        topBar = { /* Aqui você pode adicionar um TopAppBar, se quiser */ }
+    ) { innerPadding ->
+        NewsContent(
+            modifier = Modifier.padding(innerPadding)
+        )
+    }
+}
+
+@Composable
+fun NewsContent(modifier: Modifier = Modifier) {
+    // Conteúdo da aplicação (substituir pelo conteúdo real)
     Text(
-        text = "Hello $name!",
+        text = "Bem-vindo ao App de Notícias!",
         modifier = modifier
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun PreviewAppNoticias() {
     APPNoticiasTheme {
-        Greeting("Android")
+        AppNoticiasScaffold()
     }
 }
