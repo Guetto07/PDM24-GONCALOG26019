@@ -26,32 +26,78 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
 @Composable
 fun CreateButton(text: String, onClick: () -> Unit) {
     Button(onClick = onClick, modifier = Modifier.padding(4.dp)) {
         Text(text)
     }
 }
+
 @Composable
 fun Calculadora() {
-
     var display by remember { mutableStateOf("0") }
+    var lastOperator by remember { mutableStateOf("") }
+    var operand by remember { mutableStateOf("") }
+    var resetDisplayOnNextInput by remember { mutableStateOf(false) }
 
+    // Lógica de clique dos botões
+    fun onButtonClick(value: String) {
+        when (value) {
+            
+            in listOf("+", "-", "x", "/") -> {
+                if (lastOperator.isEmpty()) {
+                    operand = display
+                } else if (!resetDisplayOnNextInput) {
+                    // Executar a operação anterior
+                    operand = when (lastOperator) {
+                        "+" -> (operand.toDouble() + display.toDouble()).toString()
+                        "-" -> (operand.toDouble() - display.toDouble()).toString()
+                        "x" -> (operand.toDouble() * display.toDouble()).toString()
+                        "/" -> (operand.toDouble() / display.toDouble()).toString()
+                        else -> display
+                    }
+                }
+                lastOperator = value
+                resetDisplayOnNextInput = true
+            }
+            "=" -> {
+                if (lastOperator.isNotEmpty()) {
+                    display = when (lastOperator) {
+                        "+" -> (operand.toDouble() + display.toDouble()).toString()
+                        "-" -> (operand.toDouble() - display.toDouble()).toString()
+                        "x" -> (operand.toDouble() * display.toDouble()).toString()
+                        "/" -> (operand.toDouble() / display.toDouble()).toString()
+                        else -> display
+                    }
+                    lastOperator = ""
+                    operand = ""
+                    resetDisplayOnNextInput = true
+                }
+            }
+            "C" -> {
+                display = "0"
+                operand = ""
+                lastOperator = ""
+                resetDisplayOnNextInput = false
+            }
+        }
+    }
+
+    // Layout da Calculadora
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
 
-        Text(text = display, modifier = Modifier.padding(16.dp))
+        // Display
+        Text(
+            text = display,
+            modifier = Modifier.padding(16.dp)
+        )
 
-        fun onButtonClick(value: String) {
-            display = if (display == "0") value else display + value
-        }
-
+        // Botões
         Row {
             CreateButton(text = "7", onClick = { onButtonClick("7") })
             CreateButton(text = "8", onClick = { onButtonClick("8") })
             CreateButton(text = "9", onClick = { onButtonClick("9") })
             CreateButton(text = "/", onClick = { onButtonClick("/") })
-
         }
         Row {
             CreateButton(text = "4", onClick = { onButtonClick("4") })
@@ -66,6 +112,7 @@ fun Calculadora() {
             CreateButton(text = "-", onClick = { onButtonClick("-") })
         }
         Row {
+            CreateButton(text = "C", onClick = { onButtonClick("C") })
             CreateButton(text = "0", onClick = { onButtonClick("0") })
             CreateButton(text = ".", onClick = { onButtonClick(".") })
             CreateButton(text = "=", onClick = { onButtonClick("=") })
