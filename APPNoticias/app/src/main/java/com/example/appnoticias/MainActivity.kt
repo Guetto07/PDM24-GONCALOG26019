@@ -17,37 +17,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             APPNoticiasTheme {
-                AppNoticiasScaffold()
+                
             }
         }
-    }
-}
-
-@Composable
-fun AppNoticiasScaffold() {
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        topBar = { /* Aqui você pode adicionar um TopAppBar, se quiser */ }
-    ) { innerPadding ->
-        NewsContent(
-            modifier = Modifier.padding(innerPadding)
-        )
-    }
-}
-
-@Composable
-fun NewsContent(modifier: Modifier = Modifier) {
-    // Conteúdo da aplicação (substituir pelo conteúdo real)
-    Text(
-        text = "Bem-vindo ao App de Notícias!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewAppNoticias() {
-    APPNoticiasTheme {
-        AppNoticiasScaffold()
     }
 }
