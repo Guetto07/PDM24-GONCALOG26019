@@ -5,25 +5,32 @@ import androidx.lifecycle.viewModelScope
 import com.example.appnoticias.data.remote.api.RetrofitInstance
 import com.example.appnoticias.data.repository.RepositorioNoticiasIMPL
 import com.example.appnoticias.domain.model.Noticias
+import com.example.appnoticias.domain.model.NoticiasInfo
 import com.example.appnoticias.domain.use_case.ObterNoticiasUseCase
+import com.example.appnoticias.domain.use_case.ObterNoticiasInfoUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class ObterNoticiasViewModel : ViewModel() {
-    private val api = RetrofitInstance.api
-    private val repositorio = RepositorioNoticiasIMPL(api)
-    private val ObterNoticiasUseCase = ObterNoticiasUseCase(repositorio)
+class ObterNoticiasViewModel(
+) : ViewModel() {
 
-    val noticias = MutableStateFlow<List<Noticias>>(emptyList())
+    private val api = RetrofitInstance.api
+    private val repository = RepositorioNoticiasIMPL(api)
+    private val getNoticiasUseCase = ObterNoticiasUseCase(repository)
+
+    val news = MutableStateFlow<List<Noticias>>(emptyList())
 
     fun ProcurarNoticias() {
         viewModelScope.launch {
-            try {
-                noticias.value = ObterNoticiasUseCase()
-            }
-            catch (e : Exception){
-                noticias.value = emptyList()
-            }
+            news.value = getNoticiasUseCase()
         }
     }
+
+//    fun ObterNoticiasInfo(uuid: String) {
+//        viewModelScope.launch {
+//            _noticiaInfo.value = obterNoticiasInfoUseCase(uuid)
+//        }
+//    }
 }
+
