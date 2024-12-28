@@ -12,14 +12,17 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class ObterNoticiasViewModel(
-) : ViewModel() {
+class ObterNoticiasViewModel : ViewModel() {
 
     private val api = RetrofitInstance.api
     private val repository = RepositorioNoticiasIMPL(api)
     private val getNoticiasUseCase = ObterNoticiasUseCase(repository)
+    private val obterNoticiasInfoUseCase = ObterNoticiasInfoUseCase(repository)
 
     val news = MutableStateFlow<List<Noticias>>(emptyList())
+
+    private val _noticiaInfo = MutableStateFlow<NoticiasInfo?>(null)
+    val noticiaInfo: StateFlow<NoticiasInfo?> get() = _noticiaInfo
 
     fun ProcurarNoticias() {
         viewModelScope.launch {
@@ -27,10 +30,9 @@ class ObterNoticiasViewModel(
         }
     }
 
-//    fun ObterNoticiasInfo(uuid: String) {
-//        viewModelScope.launch {
-//            _noticiaInfo.value = obterNoticiasInfoUseCase(uuid)
-//        }
-//    }
+    fun ObterNoticiasInfo(uuid: String) {
+        viewModelScope.launch {
+            _noticiaInfo.value = obterNoticiasInfoUseCase(uuid)
+        }
+    }
 }
-

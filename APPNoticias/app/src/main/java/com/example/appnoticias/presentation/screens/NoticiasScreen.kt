@@ -28,7 +28,6 @@ fun NoticiasScreen(viewModel: ObterNoticiasViewModel, navController: NavControll
 
     val noticias by viewModel.news.collectAsState()
 
-
     LazyColumn {
         items(noticias) { noticia ->
             Card(
