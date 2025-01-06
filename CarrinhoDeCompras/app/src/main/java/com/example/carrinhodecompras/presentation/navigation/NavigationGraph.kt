@@ -10,7 +10,7 @@ import com.example.carrinhodecompras.presentation.screens.ProdutosScreen
 
 @Composable
 fun NavigationGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = "login") {
+    NavHost(navController = navController, startDestination = "produtos") {
         composable("login") { LoginScreen(navController) }
         composable("produtos") { ProdutosScreen(navController) }
         composable("carrinho") { CarrinhoScreen(navController) }
