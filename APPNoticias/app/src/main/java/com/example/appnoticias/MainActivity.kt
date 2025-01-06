@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
-            val viewModel = ObterNoticiasViewModel() // Crie ou obtenha a instância do ViewModel
+            val viewModel = ObterNoticiasViewModel()
 
             NavHost(navController = navController, startDestination = "noticiasScreen") {
                 composable("noticiasScreen") {

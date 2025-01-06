@@ -15,10 +15,7 @@ import com.example.carrinhodecompras.domain.model.Produto
 import com.example.carrinhodecompras.presentation.viewmodel.ProdutosViewModel
 
 @Composable
-fun ProdutosScreen(
-    navController: NavController,
-    viewModel: ProdutosViewModel = viewModel()
-) {
+fun ProdutosScreen(navController: NavController, viewModel: ProdutosViewModel = viewModel()) {
     val produtos = viewModel.produtos
 
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {

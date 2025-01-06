@@ -1,5 +1,6 @@
 package com.example.carrinhodecompras.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.carrinhodecompras.domain.model.Produto
@@ -19,7 +20,17 @@ class ProdutosViewModel(
 
     fun carregarProdutos() {
         viewModelScope.launch {
-            _produtos.value = obterProdutosUseCase()
+            try {
+                val resultado = obterProdutosUseCase()
+                if (resultado.isNullOrEmpty()) {
+                    Log.w("ProdutosViewModel", "Nenhum produto foi encontrado.")
+                } else {
+                    Log.d("ProdutosViewModel", "Produtos carregados: $resultado")
+                }
+                _produtos.value = resultado
+            } catch (e: Exception) {
+                Log.e("ProdutosViewModel", "Erro ao carregar produtos", e)
+            }
         }
     }
 

@@ -13,10 +13,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         Log.d("MainActivity", "App iniciado com sucesso")
         setContent {
-            CarrinhoDeComprasTheme {
                 val navController = rememberNavController()
                 NavigationGraph(navController = navController)
-            }
         }
     }
 }
