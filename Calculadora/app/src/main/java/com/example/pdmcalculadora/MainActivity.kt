@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp // Importante para o TextUnit
+import androidx.compose.ui.unit.sp
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 
@@ -47,7 +47,6 @@ fun Calculadora() {
     fun onButtonClick(value: String) {
         when (value) {
             in listOf("+", "-", "x", "/") -> {
-                // Se houver um operador anterior, realiza a operação
                 if (lastOperator.isNotEmpty()) {
                     operand = when (lastOperator) {
                         "+" -> (operand.toDouble() + display.toDouble()).toString()
@@ -70,7 +69,7 @@ fun Calculadora() {
                         "x" -> (operand.toDouble() * display.toDouble()).toString()
                         "/" -> {
                             if (display != "0") (operand.toDouble() / display.toDouble()).toString()
-                            else "Erro"  // Divisão por zero
+                            else "Erro"
                         }
                         else -> display
                     }
@@ -96,22 +95,19 @@ fun Calculadora() {
         }
     }
 
-    // Layout da Calculadora
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
 
-        // Display
         Text(
             text = display,
             modifier = Modifier
                 .padding(16.dp)
                 .fillMaxWidth()
-                .background(Color.Black) // Fundo preto
-                .padding(16.dp), // Padding para o texto
-            color = Color.White, // Cor do texto branca
-            style = TextStyle(fontSize = 32.sp) // Tamanho do texto em sp
+                .background(Color.Black)
+                .padding(16.dp),
+            color = Color.White,
+            style = TextStyle(fontSize = 32.sp)
         )
-
-        // Botões
+        
         Row {
             CreateButton(text = "7", onClick = { onButtonClick("7") })
             CreateButton(text = "8", onClick = { onButtonClick("8") })
