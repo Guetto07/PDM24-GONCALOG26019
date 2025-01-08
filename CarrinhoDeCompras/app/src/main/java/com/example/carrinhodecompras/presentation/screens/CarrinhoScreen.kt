@@ -6,11 +6,13 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.example.carrinhodecompras.data.model.CartItem
 import com.example.carrinhodecompras.presentation.navigation.Screens
 import com.example.carrinhodecompras.presentation.viewmodels.CartViewModel
 
@@ -19,7 +21,13 @@ fun CarrinhoScreen(
     navController: NavController,
     cartViewModel: CartViewModel = viewModel()
 ) {
+    // Observa os itens do carrinho do Firebase
     val cartItems = cartViewModel.cartItems
+
+    // Busca os itens do carrinho assim que a tela for carregada
+    LaunchedEffect(Unit) {
+        cartViewModel.getCartItems()
+    }
 
     Column(
         modifier = Modifier
@@ -29,6 +37,7 @@ fun CarrinhoScreen(
     ) {
         Text(text = "Carrinho de Compras", modifier = Modifier.align(Alignment.CenterHorizontally))
 
+        // Exibe os itens do carrinho
         LazyColumn(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -53,7 +62,7 @@ fun CarrinhoScreen(
 
 @Composable
 fun CartItemRow(
-    cartItem: com.example.carrinhodecompras.presentation.viewmodels.CartItem,
+    cartItem: CartItem,
     onAdd: () -> Unit,
     onRemove: () -> Unit
 ) {

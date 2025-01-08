@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.carrinhodecompras.presentation.screens.ProdutoScreen
 import com.example.carrinhodecompras.presentation.screens.CarrinhoScreen
+import com.example.carrinhodecompras.presentation.screens.LoginScreen
 
 @Composable
 fun NavigationGraph(
@@ -14,7 +15,7 @@ fun NavigationGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screens.ProdutoScreen.route
+        startDestination = Screens.LoginScreen.route
     ) {
         composable(route = Screens.ProdutoScreen.route) {
             ProdutoScreen(navController = navController)
@@ -24,10 +25,15 @@ fun NavigationGraph(
             CarrinhoScreen(navController = navController)
         }
 
+        composable(route = Screens.LoginScreen.route) {
+            LoginScreen(navController = navController)
+        }
+
     }
 }
 
 sealed class Screens(val route: String) {
     object ProdutoScreen : Screens("produto_screen")
     object CarrinhoScreen : Screens("carrinho_screen")
+    object LoginScreen : Screens("login_screen")
 }
