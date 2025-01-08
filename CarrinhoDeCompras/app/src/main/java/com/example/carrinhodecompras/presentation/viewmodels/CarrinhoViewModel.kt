@@ -11,7 +11,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class CartViewModel : ViewModel() {
     private val db = FirebaseFirestore.getInstance()
     val cartItems = mutableStateListOf<CartItem>()
-    
+
     fun addToCart(produto: Produto) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let {
