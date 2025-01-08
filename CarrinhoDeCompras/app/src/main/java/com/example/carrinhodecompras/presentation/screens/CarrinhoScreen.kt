@@ -11,18 +11,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.carrinhodecompras.data.model.Produto
 import com.example.carrinhodecompras.presentation.navigation.Screens
 import com.example.carrinhodecompras.presentation.viewmodels.CartViewModel
-import com.example.carrinhodecompras.presentation.viewmodels.ProdutoViewModel
 
 @Composable
-fun ProdutoScreen(
+fun CarrinhoScreen(
     navController: NavController,
-    produtoViewModel: ProdutoViewModel = viewModel(),
     cartViewModel: CartViewModel = viewModel()
 ) {
-    val produtos = produtoViewModel.state.value // Lista de produtos do Firebase
+    val cartItems = cartViewModel.cartItems
 
     Column(
         modifier = Modifier
@@ -30,52 +27,46 @@ fun ProdutoScreen(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Text(text = "Lista de Produtos", modifier = Modifier.align(Alignment.CenterHorizontally))
+        Text(text = "Carrinho de Compras", modifier = Modifier.align(Alignment.CenterHorizontally))
 
         LazyColumn(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(produtos) { produto ->
-                ProdutoRow(
-                    produto = produto,
-                    onAddToCart = {
-                        if (produto.id.isNotBlank()) {
-                            cartViewModel.addToCart(produto) // Adiciona o produto ao carrinho
-                        }
-                    }
+            items(cartItems) { cartItem ->
+                CartItemRow(
+                    cartItem = cartItem,
+                    onAdd = { cartViewModel.addToCart(cartItem.produto) },
+                    onRemove = { cartViewModel.removeFromCart(cartItem.produto) }
                 )
             }
         }
 
         Button(
-            onClick = { navController.navigate(Screens.CarrinhoScreen.route) },
+            onClick = { navController.navigate(Screens.ProdutoScreen.route) },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         ) {
-            Text(text = "Ir para o Carrinho")
+            Text(text = "Voltar para Produtos")
         }
     }
 }
 
-
 @Composable
-fun ProdutoRow(
-    produto: Produto,
-    onAddToCart: () -> Unit
+fun CartItemRow(
+    cartItem: com.example.carrinhodecompras.presentation.viewmodels.CartItem,
+    onAdd: () -> Unit,
+    onRemove: () -> Unit
 ) {
     Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 8.dp),
+        modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Column {
-            Text(text = produto.name)
-            Text(text = "Preço: ${produto.price}")
-        }
-        Button(onClick = onAddToCart) {
-            Text(text = "Adicionar")
+        Text(text = cartItem.produto.name)
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Button(onClick = onRemove) { Text(text = "-") }
+            Text(text = " ${cartItem.quantity} ", modifier = Modifier.padding(horizontal = 8.dp))
+            Button(onClick = onAdd) { Text(text = "+") }
         }
     }
 }
