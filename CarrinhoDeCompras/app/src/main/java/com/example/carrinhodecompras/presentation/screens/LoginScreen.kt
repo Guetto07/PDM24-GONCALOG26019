@@ -32,7 +32,6 @@ fun LoginScreen(
     ) {
         Text(text = "Login")
 
-        // Campo de texto para o email
         BasicTextField(
             value = email,
             onValueChange = { email = it },
@@ -41,7 +40,6 @@ fun LoginScreen(
         )
         Text(text = "Email")
 
-        // Campo de texto para a senha
         BasicTextField(
             value = password,
             onValueChange = { password = it },
@@ -50,12 +48,10 @@ fun LoginScreen(
         )
         Text(text = "Senha")
 
-        // Mensagem de erro, se houver
         if (errorMessage.isNotEmpty()) {
             Text(text = errorMessage, color = Color.Red)
         }
 
-        // Botão de login
         Button(
             onClick = {
                 loginViewModel.login(email, password) { success ->

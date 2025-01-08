@@ -22,9 +22,9 @@ fun ProdutoScreen(
     navController: NavController,
     produtoViewModel: ProdutoViewModel = viewModel(),
     cartViewModel: CartViewModel = viewModel(),
-    loginViewModel: LoginViewModel = viewModel()  // Adicionando o ViewModel de Login
+    loginViewModel: LoginViewModel = viewModel()
 ) {
-    val produtos = produtoViewModel.state.value // Lista de produtos do Firebase
+    val produtos = produtoViewModel.state.value
 
     Column(
         modifier = Modifier
@@ -34,7 +34,6 @@ fun ProdutoScreen(
     ) {
         Text(text = "Lista de Produtos", modifier = Modifier.align(Alignment.CenterHorizontally))
 
-        // Lista de produtos
         LazyColumn(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -44,14 +43,13 @@ fun ProdutoScreen(
                     produto = produto,
                     onAddToCart = {
                         if (produto.id.isNotBlank()) {
-                            cartViewModel.addToCart(produto) // Adiciona o produto ao carrinho
+                            cartViewModel.addToCart(produto)
                         }
                     }
                 )
             }
         }
 
-        // Botão para ir para o carrinho
         Button(
             onClick = { navController.navigate(Screens.CarrinhoScreen.route) },
             modifier = Modifier.align(Alignment.CenterHorizontally)
@@ -59,11 +57,10 @@ fun ProdutoScreen(
             Text(text = "Ir para o Carrinho")
         }
 
-        // Botão para voltar para a tela de login
         Button(
             onClick = {
-                loginViewModel.isLoggedIn.value = false  // Atualiza o estado de login
-                navController.navigate(Screens.LoginScreen.route)  // Navega para a tela de login
+                loginViewModel.isLoggedIn.value = false
+                navController.navigate(Screens.LoginScreen.route)
             },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         ) {

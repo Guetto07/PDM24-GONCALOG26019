@@ -7,7 +7,6 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginViewModel : ViewModel() {
     val isLoggedIn = mutableStateOf(false)
 
-    // Função para fazer o login
     fun login(email: String, password: String, onComplete: (Boolean) -> Unit) {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->

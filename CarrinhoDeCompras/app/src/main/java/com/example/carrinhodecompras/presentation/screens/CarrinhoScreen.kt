@@ -21,10 +21,8 @@ fun CarrinhoScreen(
     navController: NavController,
     cartViewModel: CartViewModel = viewModel()
 ) {
-    // Observa os itens do carrinho do Firebase
     val cartItems = cartViewModel.cartItems
 
-    // Busca os itens do carrinho assim que a tela for carregada
     LaunchedEffect(Unit) {
         cartViewModel.getCartItems()
     }
@@ -37,7 +35,6 @@ fun CarrinhoScreen(
     ) {
         Text(text = "Carrinho de Compras", modifier = Modifier.align(Alignment.CenterHorizontally))
 
-        // Exibe os itens do carrinho
         LazyColumn(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(8.dp)

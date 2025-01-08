@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
 class ProdutoViewModel : ViewModel() {
-    val state = mutableStateOf<List<Produto>>(emptyList()) // Lista de produtos
+    val state = mutableStateOf<List<Produto>>(emptyList())
 
     init {
         getProdutos()

@@ -1,4 +1,4 @@
-package com.example.calculadora
+package com.example.pdmcalculadora
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -107,7 +107,7 @@ fun Calculadora() {
             color = Color.White,
             style = TextStyle(fontSize = 32.sp)
         )
-        
+
         Row {
             CreateButton(text = "7", onClick = { onButtonClick("7") })
             CreateButton(text = "8", onClick = { onButtonClick("8") })
