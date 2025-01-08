@@ -4,15 +4,23 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.carrinhodecompras.presentation.screens.CarrinhoScreen
-import com.example.carrinhodecompras.presentation.screens.LoginScreen
-import com.example.carrinhodecompras.presentation.screens.ProdutosScreen
+import androidx.navigation.compose.rememberNavController
+import com.example.carrinhodecompras.presentation.screens.ProdutoScreen
 
 @Composable
-fun NavigationGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = "produtos") {
-        composable("login") { LoginScreen(navController) }
-        composable("produtos") { ProdutosScreen(navController) }
-        composable("carrinho") { CarrinhoScreen(navController) }
+fun NavigationGraph(
+    navController: NavHostController = rememberNavController()
+) {
+    NavHost(
+        navController = navController,
+        startDestination = Screens.ProdutoScreen.route
+    ) {
+        composable(route = Screens.ProdutoScreen.route) {
+            ProdutoScreen()
+        }
     }
+}
+
+sealed class Screens(val route: String) {
+    object ProdutoScreen : Screens("produto_screen")
 }

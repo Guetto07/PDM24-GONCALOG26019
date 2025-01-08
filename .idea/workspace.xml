@@ -4,7 +4,122 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce0e7ba0-948d-4ba0-9002-39085f52cb02" name="Changes" comment="" />
+    <list default="true" id="8f7be7c4-c76e-4940-8515-4bafb31b5fb1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/androidTest/java/com/example/myapplication/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/java/com/example/myapplication/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/java/com/example/myapplication/ui/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/java/com/example/myapplication/ui/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/java/com/example/myapplication/ui/theme/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/app/src/test/java/com/example/myapplication/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarrinhoCompras/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PDMGONCALOG26019.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/androidTest/java/com/example/carrinhodecompras/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/data/model/ProdutoDTO.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/data/model/UserDTO.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/data/repository/RepositorioCarrinhoIMPL.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/data/repository/RepositorioProdutosIMPL.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/data/repository/RepositorioUserIMPL.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/model/Carrinho.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/model/Produto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/model/User.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/repository/RepositorioCarrinho.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/repository/RepositorioProduto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/repository/RepositorioUser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/use_case/AdicionarProdutoCarrinhoUseCase.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/use_case/LoginUseCase.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/use_case/ObterProdutoUseCase.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/domain/use_case/RemoverProdutoCarrinhoUseCase.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/presentation/navigation/NavigationGraph.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/presentation/screens/CarrinhoScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/presentation/screens/LoginScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/presentation/screens/ProdutosScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/presentation/view_models/CarrinhoViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/presentation/view_models/LoginViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/presentation/view_models/ProdutosViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/ui/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/ui/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/java/com/example/carrinhodecompras/ui/theme/Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/app/src/test/java/com/example/carrinhodecompras/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrinhoDeCompras/settings.gradle.kts" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,9 +132,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
   "associatedIndex": 7
 }]]></component>
-  <component name="ProjectId" id="2rGJUZLgG6aAqTjKM1z8oq3bokh" />
+  <component name="ProjectId" id="2rKDoimuLjftMp0SRfnL8mv5NBn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,21 +145,21 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ASUS/Desktop/Repositorio GitHub/PDMGONCALOG26019"
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ce0e7ba0-948d-4ba0-9002-39085f52cb02" name="Changes" comment="" />
-      <created>1736179494488</created>
+      <changelist id="8f7be7c4-c76e-4940-8515-4bafb31b5fb1" name="Changes" comment="" />
+      <created>1736299051832</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1736179494488</updated>
+      <updated>1736299051832</updated>
     </task>
     <servers />
   </component>
